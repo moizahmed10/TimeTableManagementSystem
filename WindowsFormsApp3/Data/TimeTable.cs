@@ -11,22 +11,22 @@ namespace WindowsFormsApp3.Data
 public  Slot[,] timetable = new Slot[5, 8];
         public void FillDummyData()
         {
-            Slot s = new Slot("Moiz", "OOP", "F17");
+            Slot s = new Slot("Moiz", "OOP", "F17", "R1");
             timetable[1, 4] = s;
 
-            s = new Slot("Shahid", "PF", "F17");
+            s = new Slot("Shahid", "PF", "F17", "R2");
             timetable[2, 6] = s;
 
-            s = new Slot("Jazib", "ISE", "F17");
+            s = new Slot("Jazib", "ISE", "F17", "R5");
             timetable[3, 1] = s;
 
-            s = new Slot("Moiz", "OOP", "F17");
+            s = new Slot("Moiz", "OOP", "F17", "R3");
             timetable[1, 3] = s;
 
-            s = new Slot("Jazib", "ISE", "F17");
+            s = new Slot("Jazib", "ISE", "F17", "R2");
             timetable[4, 1] = s;
 
-            s = new Slot("Shahid", "PF", "F17");
+            s = new Slot("Shahid", "PF", "F17", "R1");
             timetable[0, 0] = s;
         }
         public Slot[,] get_teacher(string steacher)
@@ -84,7 +84,26 @@ public  Slot[,] timetable = new Slot[5, 8];
             return batchtimetable;
         }
 
+        public Slot[,] GetTimetableByRoom(string pRoom)
+        {
+            Slot[,] table = new Slot[5, 8];
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (timetable[i, j] != null)
+                    {
+                        if (pRoom == timetable[i, j].Room)
+                        {
+                            table[i, j] = timetable[i, j];
+                        }
+                    }
+                }
+            }
+            return table;
+        }
 
-       
+
+
     }
 }

@@ -53,34 +53,9 @@ namespace WindowsFormsApp3
             table.FillDummyData();
 //            DisplayTimetable(table.timetable);
 
-            Slot[,] ttable = table.get_course("PF");
+            Slot[,] ttable = table.GetTimetableByRoom("R1");
 
             DisplayTimetable(ttable);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
