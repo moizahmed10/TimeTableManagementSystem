@@ -11,6 +11,7 @@ namespace WindowsFormsApp3.Data
         private string mTeacher;
         private string mCourse;
         private string mBatch;
+        private string mRoom;
         
         public string Teacher
         {
@@ -27,11 +28,17 @@ namespace WindowsFormsApp3.Data
             get { return mBatch; }
         }
         
-        public Slot(string pteacher, string pcourse, string pbatch)
+        public string Room 
+        {
+            get { return mRoom;}
+        }
+        
+        public Slot(string pteacher, string pcourse, string pbatch, string pRoom)
         {
             mTeacher = pteacher;
             mBatch = pbatch;
             mCourse = pcourse;
+            mRoom = pRoom;
         }
 
     }
