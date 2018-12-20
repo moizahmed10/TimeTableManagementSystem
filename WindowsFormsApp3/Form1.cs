@@ -17,7 +17,7 @@ namespace WindowsFormsApp3
         {
             InitializeComponent();
         }
-        public void DisplayTimetable(slot arr[,])
+        public void DisplayTimetable(Slot arr[,])
         {
             DataTable dt = new DataTable();
 
@@ -37,7 +37,7 @@ namespace WindowsFormsApp3
                 {
                     if (table.timetable[day, col] != null)
                     {
-                        slot s = (slot)table.timetable[day, col];
+                        Slot s = (Slot)table.timetable[day, col];
                         // row[col] = ((slot)table.timetable[day, col]).mCourse;
                         row[col] = s.mCourse+" , "+s.mTeacher+" , "+s.mBatch;
                     }

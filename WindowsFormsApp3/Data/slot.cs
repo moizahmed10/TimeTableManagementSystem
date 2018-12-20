@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp3.Data
 {
-    class slot
+    class Slot
     {
         public string mTeacher;
         public string mCourse;
         public string mBatch;
 
-        public slot(string pteacher, string pcourse, string pbatch)
+        public Slot(string pteacher, string pcourse, string pbatch)
         {
             mTeacher = pteacher;
             mBatch = pbatch;

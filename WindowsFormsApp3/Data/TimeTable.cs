@@ -8,30 +8,30 @@ namespace WindowsFormsApp3.Data
 {
     class TimeTable
     {
-public  slot[,] timetable = new slot[5, 8];
+public  Slot[,] timetable = new Slot[5, 8];
         public void FillDummyData()
         {
-            slot s = new slot("Moiz", "OOP", "F17");
+            Slot s = new Slot("Moiz", "OOP", "F17");
             timetable[1, 4] = s;
 
-            s = new slot("Shahid", "PF", "F17");
+            s = new Slot("Shahid", "PF", "F17");
             timetable[2, 6] = s;
 
-            s = new slot("Jazib", "ISE", "F17");
+            s = new Slot("Jazib", "ISE", "F17");
             timetable[3, 1] = s;
 
-            s = new slot("Moiz", "OOP", "F17");
+            s = new Slot("Moiz", "OOP", "F17");
             timetable[1, 3] = s;
 
-            s = new slot("Jazib", "ISE", "F17");
+            s = new Slot("Jazib", "ISE", "F17");
             timetable[4, 1] = s;
 
-            s = new slot("Shahid", "PF", "F17");
+            s = new Slot("Shahid", "PF", "F17");
             timetable[0, 0] = s;
         }
-        public slot[,] get_teacher(string steacher)
+        public Slot[,] get_teacher(string steacher)
         {
-            slot[,] teachertimetable = new slot[5, 8];
+            Slot[,] teachertimetable = new Slot[5, 8];
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 8; j++)
@@ -44,9 +44,9 @@ public  slot[,] timetable = new slot[5, 8];
             }
             return teachertimetable;
         }
-        public slot[,] get_course(string scourse)
+        public Slot[,] get_course(string scourse)
         {
-            slot[,] coursetimetable = new slot[5, 8];
+            Slot[,] coursetimetable = new Slot[5, 8];
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 8; j++)
@@ -59,9 +59,9 @@ public  slot[,] timetable = new slot[5, 8];
             }
             return coursetimetable;
         }
-        public slot[,] get_batch(string sbatch)
+        public Slot[,] get_batch(string sbatch)
         {
-            slot[,] batchtimetable = new slot[5, 8];
+            Slot[,] batchtimetable = new Slot[5, 8];
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 8; j++)
