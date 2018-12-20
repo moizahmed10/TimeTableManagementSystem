@@ -40,7 +40,7 @@ namespace WindowsFormsApp3
                     if (arr[day, col] != null)
                     {
                         Slot s = (Slot)arr[day, col];
-                        row[col] = s.Course + " , " + s.Teacher + " , " + s.Batch;
+                        row[col] = s.Course + " , " + s.Teacher + " , " + s.Batch + " , " + s.Room;
                     }
                 }
                 dt.Rows.Add(row);
@@ -51,11 +51,15 @@ namespace WindowsFormsApp3
         {
             table = new TimeTable();
             table.FillDummyData();
-//            DisplayTimetable(table.timetable);
+            DisplayTimetable(table.MasterTimeTable);
 
-            Slot[,] ttable = table.GetTimetableByRoom("R1");
+            //Slot[,] ttable = table.GetTimetableByRoom("R1");
+            //DisplayTimetable(ttable);
+        }
 
-            DisplayTimetable(ttable);
+        private void btnSearcchTeacher_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

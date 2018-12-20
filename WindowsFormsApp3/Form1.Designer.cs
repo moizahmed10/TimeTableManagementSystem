@@ -32,6 +32,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btnSearcchTeacher = new System.Windows.Forms.Button();
+            this.txtTeacherName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,11 +59,40 @@
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // btnSearcchTeacher
+            // 
+            this.btnSearcchTeacher.Location = new System.Drawing.Point(216, 31);
+            this.btnSearcchTeacher.Name = "btnSearcchTeacher";
+            this.btnSearcchTeacher.Size = new System.Drawing.Size(75, 23);
+            this.btnSearcchTeacher.TabIndex = 3;
+            this.btnSearcchTeacher.Text = "Search";
+            this.btnSearcchTeacher.UseVisualStyleBackColor = true;
+            this.btnSearcchTeacher.Click += new System.EventHandler(this.btnSearcchTeacher_Click);
+            // 
+            // txtTeacherName
+            // 
+            this.txtTeacherName.Location = new System.Drawing.Point(105, 32);
+            this.txtTeacherName.Name = "txtTeacherName";
+            this.txtTeacherName.Size = new System.Drawing.Size(100, 20);
+            this.txtTeacherName.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Teacher Name:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtTeacherName);
+            this.Controls.Add(this.btnSearcchTeacher);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridView1);
             this.MainMenuStrip = this.menuStrip1;
@@ -78,6 +110,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Button btnSearcchTeacher;
+        private System.Windows.Forms.TextBox txtTeacherName;
+        private System.Windows.Forms.Label label1;
     }
 }
 

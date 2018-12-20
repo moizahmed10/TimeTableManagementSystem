@@ -8,27 +8,34 @@ namespace WindowsFormsApp3.Data
 {
     class TimeTable
     {
-public  Slot[,] timetable = new Slot[5, 8];
+        private Slot[,] mTimetable = new Slot[5, 8];
+
+        public Slot[,] MasterTimeTable
+        {
+            get { return mTimetable; }
+        }
+
         public void FillDummyData()
         {
             Slot s = new Slot("Moiz", "OOP", "F17", "R1");
-            timetable[1, 4] = s;
+            mTimetable[1, 4] = s;
 
             s = new Slot("Shahid", "PF", "F17", "R2");
-            timetable[2, 6] = s;
+            mTimetable[2, 6] = s;
 
             s = new Slot("Jazib", "ISE", "F17", "R5");
-            timetable[3, 1] = s;
+            mTimetable[3, 1] = s;
 
             s = new Slot("Moiz", "OOP", "F17", "R3");
-            timetable[1, 3] = s;
+            mTimetable[1, 3] = s;
 
             s = new Slot("Jazib", "ISE", "F17", "R2");
-            timetable[4, 1] = s;
+            mTimetable[4, 1] = s;
 
             s = new Slot("Shahid", "PF", "F17", "R1");
-            timetable[0, 0] = s;
+            mTimetable[0, 0] = s;
         }
+
         public Slot[,] get_teacher(string steacher)
         {
             Slot[,] teachertimetable = new Slot[5, 8];
@@ -36,17 +43,18 @@ public  Slot[,] timetable = new Slot[5, 8];
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (timetable[i, j] != null)
+                    if (mTimetable[i, j] != null)
                     {
-                        if (steacher == timetable[i, j].Teacher)
+                        if (steacher == mTimetable[i, j].Teacher)
                         {
-                            teachertimetable[i, j] = timetable[i, j];
+                            teachertimetable[i, j] = mTimetable[i, j];
                         }
                     }
                 }
             }
             return teachertimetable;
         }
+
         public Slot[,] get_course(string scourse)
         {
             Slot[,] coursetimetable = new Slot[5, 8];
@@ -54,11 +62,11 @@ public  Slot[,] timetable = new Slot[5, 8];
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (timetable[i, j] != null)
+                    if (mTimetable[i, j] != null)
                     {
-                        if (scourse == timetable[i, j].Course)
+                        if (scourse == mTimetable[i, j].Course)
                         {
-                            coursetimetable[i, j] = timetable[i, j];
+                            coursetimetable[i, j] = mTimetable[i, j];
                         }
                     }
                 }
@@ -72,11 +80,11 @@ public  Slot[,] timetable = new Slot[5, 8];
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (timetable[i, j] != null)
+                    if (mTimetable[i, j] != null)
                     {
-                        if (sbatch == timetable[i, j].Batch)
+                        if (sbatch == mTimetable[i, j].Batch)
                         {
-                            batchtimetable[i, j] = timetable[i, j];
+                            batchtimetable[i, j] = mTimetable[i, j];
                         }
                     }
                 }
@@ -91,11 +99,11 @@ public  Slot[,] timetable = new Slot[5, 8];
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (timetable[i, j] != null)
+                    if (mTimetable[i, j] != null)
                     {
-                        if (pRoom == timetable[i, j].Room)
+                        if (pRoom == mTimetable[i, j].Room)
                         {
-                            table[i, j] = timetable[i, j];
+                            table[i, j] = mTimetable[i, j];
                         }
                     }
                 }
