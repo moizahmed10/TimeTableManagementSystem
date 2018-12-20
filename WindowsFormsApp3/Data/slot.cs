@@ -6,12 +6,27 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp3.Data
 {
-    class Slot
+    public class Slot
     {
-        public string mTeacher;
-        public string mCourse;
-        public string mBatch;
+        private string mTeacher;
+        private string mCourse;
+        private string mBatch;
+        
+        public string Teacher
+        {
+            get { return mTeacher; }
+        }
 
+        public string Course
+        {
+            get { return mCourse; }
+        }
+
+        public string Batch
+        {
+            get { return mBatch; }
+        }
+        
         public Slot(string pteacher, string pcourse, string pbatch)
         {
             mTeacher = pteacher;

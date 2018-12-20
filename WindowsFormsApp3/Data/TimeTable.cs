@@ -36,9 +36,12 @@ public  Slot[,] timetable = new Slot[5, 8];
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (steacher == timetable[i, j].mTeacher)
+                    if (timetable[i, j] != null)
                     {
-                        teachertimetable[i, j] = timetable[i, j];
+                        if (steacher == timetable[i, j].Teacher)
+                        {
+                            teachertimetable[i, j] = timetable[i, j];
+                        }
                     }
                 }
             }
@@ -51,9 +54,12 @@ public  Slot[,] timetable = new Slot[5, 8];
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (scourse == timetable[i, j].mCourse)
+                    if (timetable[i, j] != null)
                     {
-                        coursetimetable[i, j] = timetable[i, j];
+                        if (scourse == timetable[i, j].Course)
+                        {
+                            coursetimetable[i, j] = timetable[i, j];
+                        }
                     }
                 }
             }
@@ -66,9 +72,12 @@ public  Slot[,] timetable = new Slot[5, 8];
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (sbatch == timetable[i, j].mBatch)
+                    if (timetable[i, j] != null)
                     {
-                        batchtimetable[i, j] = timetable[i, j];
+                        if (sbatch == timetable[i, j].Batch)
+                        {
+                            batchtimetable[i, j] = timetable[i, j];
+                        }
                     }
                 }
             }

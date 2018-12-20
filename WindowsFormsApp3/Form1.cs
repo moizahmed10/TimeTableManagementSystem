@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp3.Data;
+
 namespace WindowsFormsApp3
 {
     public partial class Form1 : Form
@@ -17,7 +18,8 @@ namespace WindowsFormsApp3
         {
             InitializeComponent();
         }
-        public void DisplayTimetable(Slot arr[,])
+
+        public void DisplayTimetable(Slot[,] arr)
         {
             DataTable dt = new DataTable();
 
@@ -35,11 +37,10 @@ namespace WindowsFormsApp3
                 DataRow row = dt.NewRow();
                 for (int col = 0; col < dt.Columns.Count; col++)
                 {
-                    if (table.timetable[day, col] != null)
+                    if (arr[day, col] != null)
                     {
-                        Slot s = (Slot)table.timetable[day, col];
-                        // row[col] = ((slot)table.timetable[day, col]).mCourse;
-                        row[col] = s.mCourse+" , "+s.mTeacher+" , "+s.mBatch;
+                        Slot s = (Slot)arr[day, col];
+                        row[col] = s.Course + " , " + s.Teacher + " , " + s.Batch;
                     }
                 }
                 dt.Rows.Add(row);
@@ -50,7 +51,11 @@ namespace WindowsFormsApp3
         {
             table = new TimeTable();
             table.FillDummyData();
-            DisplayTimetable();
+//            DisplayTimetable(table.timetable);
+
+            Slot[,] ttable = table.get_course("PF");
+
+            DisplayTimetable(ttable);
         }
 
         private void button1_Click(object sender, EventArgs e)
