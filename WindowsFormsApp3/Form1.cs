@@ -67,12 +67,11 @@ namespace WindowsFormsApp3
 
         private void byTeacherToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            table = new TimeTable();
             Form2 f2 = new Form2();
             f2.search_text("Enter the Name of The Teacher");
             f2.ShowDialog();
-            table.get_teacher(f2.searchtext);
-            DisplayTimetable(table.get_teacher(f2.searchtext));
+            Slot[,] arr = table.get_teacher(f2.searchtext);
+            DisplayTimetable(arr);
         }
 
         private void byCourseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,6 +79,8 @@ namespace WindowsFormsApp3
             Form2 f2 = new Form2();
             f2.search_text("Enter the Course Code");
             f2.ShowDialog();
+            Slot[,] arr=table.get_teacher(f2.searchtext);
+            DisplayTimetable(arr);
         }
 
         private void byBatchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -87,6 +88,8 @@ namespace WindowsFormsApp3
             Form2 f2 = new Form2();
             f2.search_text("Enter the Batch NUmber");
             f2.ShowDialog();
+            Slot[,] arr=table.get_teacher(f2.searchtext);
+            DisplayTimetable(arr);
         }
 
         //TODO Add menu for search Done
