@@ -29,10 +29,10 @@ namespace WindowsFormsApp3.Data
             s = new Slot("Moiz", "OOP", "F17", "R3");
             mTimetable[1, 3] = s;
 
-            s = new Slot("Jazib", "ISE", "F17", "R2");
+            s = new Slot("Jazib", "ISE", "F16", "R2");
             mTimetable[4, 1] = s;
 
-            s = new Slot("Shahid", "PF", "F17", "R1");
+            s = new Slot("Shahid", "PF", "F16", "R1");
             mTimetable[0, 0] = s;
         }
 

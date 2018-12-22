@@ -18,5 +18,6 @@ namespace WindowsFormsApp3
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+
     }
 }

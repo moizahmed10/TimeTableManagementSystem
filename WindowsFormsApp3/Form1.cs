@@ -8,9 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp3.Data;
+using WindowsFormsApp3;
 
 namespace WindowsFormsApp3
 {
+
     public partial class Form1 : Form
     {
         TimeTable table;
@@ -59,7 +61,34 @@ namespace WindowsFormsApp3
 
         private void btnSearcchTeacher_Click(object sender, EventArgs e)
         {
+            
+            //TODO: Add search by teacher functionality
+        }
+
+        private void byTeacherToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.search_text("Enter the Name of The Teacher");
+            f2.ShowDialog();
 
         }
+
+        private void byCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.search_text("Enter the Course Code");
+            f2.ShowDialog();
+        }
+
+        private void byBatchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.search_text("Enter the Batch NUmber");
+            f2.ShowDialog();
+        }
+
+        //TODO Add menu for search Done
+        //TODO add dialogs for search string 
+        //TODO implement all 4 types of searches Done
     }
 }
