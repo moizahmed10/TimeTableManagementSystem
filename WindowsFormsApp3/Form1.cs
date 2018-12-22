@@ -79,7 +79,7 @@ namespace WindowsFormsApp3
             Form2 f2 = new Form2();
             f2.search_text("Enter the Course Code");
             f2.ShowDialog();
-            Slot[,] arr=table.get_teacher(f2.searchtext);
+            Slot[,] arr=table.get_course(f2.searchtext);
             DisplayTimetable(arr);
         }
 
@@ -88,7 +88,7 @@ namespace WindowsFormsApp3
             Form2 f2 = new Form2();
             f2.search_text("Enter the Batch NUmber");
             f2.ShowDialog();
-            Slot[,] arr=table.get_teacher(f2.searchtext);
+            Slot[,] arr=table.get_batch(f2.searchtext);
             DisplayTimetable(arr);
         }
 
