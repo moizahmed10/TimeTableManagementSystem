@@ -38,10 +38,17 @@ namespace WindowsFormsApp3
         {   searchtext=text_copy();
             this.Hide();
         }
+        
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Enter)
+            {
+                searchtext = text_copy();
+                this.Hide();
 
+            }
         }
     }
 }

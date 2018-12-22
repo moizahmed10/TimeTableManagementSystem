@@ -92,8 +92,13 @@ namespace WindowsFormsApp3
             DisplayTimetable(arr);
         }
 
-        //TODO Add menu for search Done
-        //TODO add dialogs for search string 
-        //TODO implement all 4 types of searches Done
+        private void matchTeacherBatchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.ShowDialog();
+            Slot[,] arr = table.get_teacher_and_batch(f3.teacher,f3.batch);
+            DisplayTimetable(arr);
+
+        }
     }
 }

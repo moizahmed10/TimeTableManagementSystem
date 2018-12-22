@@ -36,6 +36,7 @@
             this.byTeacherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byBatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matchTeacherBatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +57,8 @@
             // menuStrip2
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.searchToolStripMenuItem});
+            this.searchToolStripMenuItem,
+            this.matchTeacherBatchToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(800, 24);
@@ -94,6 +96,13 @@
             this.byBatchToolStripMenuItem.Text = "By Batch";
             this.byBatchToolStripMenuItem.Click += new System.EventHandler(this.byBatchToolStripMenuItem_Click);
             // 
+            // matchTeacherBatchToolStripMenuItem
+            // 
+            this.matchTeacherBatchToolStripMenuItem.Name = "matchTeacherBatchToolStripMenuItem";
+            this.matchTeacherBatchToolStripMenuItem.Size = new System.Drawing.Size(133, 20);
+            this.matchTeacherBatchToolStripMenuItem.Text = "Match Teacher & Batch";
+            this.matchTeacherBatchToolStripMenuItem.Click += new System.EventHandler(this.matchTeacherBatchToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,6 +130,7 @@
         private System.Windows.Forms.ToolStripMenuItem byTeacherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem byCourseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem byBatchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem matchTeacherBatchToolStripMenuItem;
     }
 }
 
