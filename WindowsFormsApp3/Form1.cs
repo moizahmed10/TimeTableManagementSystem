@@ -67,10 +67,12 @@ namespace WindowsFormsApp3
 
         private void byTeacherToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            table = new TimeTable();
             Form2 f2 = new Form2();
             f2.search_text("Enter the Name of The Teacher");
             f2.ShowDialog();
-
+            table.get_teacher(f2.searchtext);
+            DisplayTimetable(table.get_teacher(f2.searchtext));
         }
 
         private void byCourseToolStripMenuItem_Click(object sender, EventArgs e)
