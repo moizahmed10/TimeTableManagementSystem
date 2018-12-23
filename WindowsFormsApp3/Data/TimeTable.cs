@@ -24,9 +24,9 @@ namespace WindowsFormsApp3.Data
             mSchedule[1, 4] = s;
 
             s = new Slot("Shahid", "PF", "F17", "R2");
-            mSchedule[2, 6] = s;
+            mSchedule[2, 5] = s;
 
-            s = new Slot("Jazib", "ISE", "F17", "RROW_COUNT");
+            s = new Slot("Jazib", "ISE", "F17", "R5");
             mSchedule[3, 1] = s;
 
             s = new Slot("Moiz", "OOP", "F17", "R3");
@@ -131,11 +131,6 @@ namespace WindowsFormsApp3.Data
                 }
             }
             return temptimetable;
-        }
-
-        internal void AddToSchedule(int row, int col, Slot s)
-        {
-            mSchedule[row, col] = s;
         }
     }
 }
