@@ -96,8 +96,13 @@ namespace WindowsFormsApp3
         {
             Form3 f3 = new Form3();
             f3.ShowDialog();
-            Slot[,] arr = table.get_teacher_and_batch(f3.teacher,f3.batch);
+            Slot[,] arr = table.GetTimetableByTeacherBatch(f3.teacher,f3.batch);
             DisplayTimetable(arr);
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

@@ -43,11 +43,24 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(12, 117);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.Size = new System.Drawing.Size(776, 321);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // contextMenuStrip1
             // 
@@ -78,21 +91,21 @@
             // byTeacherToolStripMenuItem
             // 
             this.byTeacherToolStripMenuItem.Name = "byTeacherToolStripMenuItem";
-            this.byTeacherToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.byTeacherToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.byTeacherToolStripMenuItem.Text = "By Teacher";
             this.byTeacherToolStripMenuItem.Click += new System.EventHandler(this.byTeacherToolStripMenuItem_Click);
             // 
             // byCourseToolStripMenuItem
             // 
             this.byCourseToolStripMenuItem.Name = "byCourseToolStripMenuItem";
-            this.byCourseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.byCourseToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.byCourseToolStripMenuItem.Text = "By Course";
             this.byCourseToolStripMenuItem.Click += new System.EventHandler(this.byCourseToolStripMenuItem_Click);
             // 
             // byBatchToolStripMenuItem
             // 
             this.byBatchToolStripMenuItem.Name = "byBatchToolStripMenuItem";
-            this.byBatchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.byBatchToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.byBatchToolStripMenuItem.Text = "By Batch";
             this.byBatchToolStripMenuItem.Click += new System.EventHandler(this.byBatchToolStripMenuItem_Click);
             // 
@@ -111,7 +124,7 @@
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "IIUI - Timetable Application";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip2.ResumeLayout(false);

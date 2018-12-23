@@ -111,9 +111,9 @@ namespace WindowsFormsApp3.Data
             return table;
         }
 
-        public Slot[,] get_teacher_and_batch(string steacher,string sbatch)
+        public Slot[,] GetTimetableByTeacherBatch(string steacher,string sbatch)
         {
-            Slot[,] teacherandbatchtimetable = new Slot[5, 8];
+            Slot[,] temptimetable = new Slot[5, 8];
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 8; j++)
@@ -122,12 +122,12 @@ namespace WindowsFormsApp3.Data
                     {
                         if (steacher == mTimetable[i, j].Teacher | sbatch == mTimetable[i,j].Batch)
                         {
-                            teacherandbatchtimetable[i, j] = mTimetable[i, j];
+                            temptimetable[i, j] = mTimetable[i, j];
                         }
                     }
                 }
             }
-            return teacherandbatchtimetable;
+            return temptimetable;
         }
 
 

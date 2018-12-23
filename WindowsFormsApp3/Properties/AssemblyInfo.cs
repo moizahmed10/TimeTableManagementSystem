@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WindowsFormsApp3")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("IIUI Timetable Management System")]
+[assembly: AssemblyDescription("IIUI Timetable Management System")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WindowsFormsApp3")]
+[assembly: AssemblyCompany("Moiz Ahmed")]
+[assembly: AssemblyProduct("IIUI-Timetable")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
