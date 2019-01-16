@@ -14,10 +14,11 @@ namespace WindowsFormsApp3
     public partial class Form1 : Form
     {
         TimeTable table;
+
         public Form1()
         {
-            table = new TimeTable();
             InitializeComponent();
+            table = new TimeTable();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -40,7 +41,7 @@ namespace WindowsFormsApp3
         private void byCourseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
-            f2.search_text("Enter the Course Code");
+            f2.search_text("Enter the Course");
             f2.ShowDialog();
             Slot[,] arr = table.get_course(f2.searchtext);
             DisplayTimetable(arr);
@@ -68,7 +69,6 @@ namespace WindowsFormsApp3
         public void DisplayMasterTimetable(ArrayList[,] arr)
         {
             System.Data.DataTable dt = new System.Data.DataTable();
-
             dt.Columns.Add("Day");
             dt.Columns.Add("8:30");
             dt.Columns.Add("10:00");
@@ -80,7 +80,7 @@ namespace WindowsFormsApp3
             for (int day = 0; day < TimeTable.ROW_COUNT; day++)
             {
                 DataRow row = dt.NewRow();
-
+                
                 if (day == 0)
                     row[0] = "Monday";
                 else if(day == 1)

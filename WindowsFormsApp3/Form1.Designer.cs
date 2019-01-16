@@ -72,8 +72,8 @@
             // menuStrip2
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.searchToolStripMenuItem,
+                this.fileToolStripMenuItem,
+                this.searchToolStripMenuItem,
             this.matchTeacherBatchToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -172,8 +172,8 @@
         private System.Windows.Forms.ToolStripMenuItem byBatchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matchTeacherBatchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openScheduleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openScheduleToolStripMenuItem ;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem ;
     }
 }
 
