@@ -6,6 +6,7 @@ using WindowsFormsApp3.Data;
 using Microsoft.Office.Interop.Excel;
 using System.Data.Common;
 using System.Runtime.InteropServices;
+using System.Collections;
 
 namespace WindowsFormsApp3
 {
@@ -21,16 +22,10 @@ namespace WindowsFormsApp3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            //table.FillDummyData();
-            //ReadExcelFile();
-            //DisplayTimetable(table.MasterSchedule);
         }
 
         private void btnSearcchTeacher_Click(object sender, EventArgs e)
         {
-
-            //TODO: Add search by teacher functionality
         }
 
         private void byTeacherToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,7 +49,7 @@ namespace WindowsFormsApp3
         private void byBatchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
-            f2.search_text("Enter the Batch NUmber");
+            f2.search_text("Enter the Batch Number");
             f2.ShowDialog();
             Slot[,] arr = table.get_batch(f2.searchtext);
             DisplayTimetable(arr);
@@ -67,6 +62,56 @@ namespace WindowsFormsApp3
             Slot[,] arr = table.GetTimetableByTeacherBatch(f3.teacher, f3.batch);
             DisplayTimetable(arr);
 
+        }
+
+
+        public void DisplayMasterTimetable(ArrayList[,] arr)
+        {
+            System.Data.DataTable dt = new System.Data.DataTable();
+
+            dt.Columns.Add("Day");
+            dt.Columns.Add("8:30");
+            dt.Columns.Add("10:00");
+            dt.Columns.Add("11:30");
+            dt.Columns.Add("1:30");
+            dt.Columns.Add("3:00");
+            dt.Columns.Add("4:30");
+
+            for (int day = 0; day < TimeTable.ROW_COUNT; day++)
+            {
+                DataRow row = dt.NewRow();
+
+                if (day == 0)
+                    row[0] = "Monday";
+                else if(day == 1)
+                    row[0] = "Tuesday";
+                else if (day == 2)
+                    row[0] = "Wednesday";
+                else if(day == 3)
+                    row[0] = "Thursday";
+                else if (day == 4)
+                    row[0] = "Friday";
+                else
+                    row[0] = "unknown";
+
+
+                for (int col = 1; col < dt.Columns.Count; col++)
+                {
+                    if (arr[day, col - 1] != null)
+                    {
+                        if (arr[day, col - 1].Count > 0)
+                        {
+                            row[col] = "("+ arr[day, col - 1].Count + ") "; 
+                            foreach (Slot s in arr[day, col - 1])
+                            {
+                                row[col] += s.Course + " , " + s.Teacher + " , " + s.Batch + " , " + s.Room + " | ";
+                            }
+                        }
+                    }
+                }
+                dt.Rows.Add(row);
+            }
+            dataGridView1.DataSource = dt;
         }
 
 
@@ -88,21 +133,21 @@ namespace WindowsFormsApp3
 
                 if (day == 0)
                     row[0] = "Monday";
-                else if(day == 1)
+                else if (day == 1)
                     row[0] = "Tuesday";
                 else if (day == 2)
                     row[0] = "Wednesday";
-                else if(day == 3)
+                else if (day == 3)
                     row[0] = "Thursday";
                 else if (day == 4)
                     row[0] = "Friday";
-                
+
 
                 for (int col = 1; col < dt.Columns.Count; col++)
                 {
-                    if (arr[day, col-1] != null)
+                    if (arr[day, col - 1] != null)
                     {
-                        Slot s = (Slot)arr[day, col-1];
+                        Slot s = (Slot)arr[day, col - 1];
                         row[col] = s.Course + " , " + s.Teacher + " , " + s.Batch + " , " + s.Room;
                     }
                 }
@@ -110,7 +155,6 @@ namespace WindowsFormsApp3
             }
             dataGridView1.DataSource = dt;
         }
-
 
         public void ReadExcelFile(string filename)
         {
@@ -120,16 +164,12 @@ namespace WindowsFormsApp3
             
             int rowCount = xlWorksheet.UsedRange.Rows.Count;
             int colCount = xlWorksheet.UsedRange.Columns.Count;
+                string lDay = "Monday";
 
-            ///Column 1 - day
-            ///column 2 - Batch
-            ///column 3 - room 
-            ///column 4-9  slots 
-
-            ///row 1  - column headings
-           
             for (int i = 2; i <= rowCount; i++)
             {
+                if(xlWorksheet.UsedRange.Cells[i, 1].Value2 !=null)
+                    lDay = xlWorksheet.UsedRange.Cells[i, 1].Value2.ToString();
                 string lBatch = xlWorksheet.UsedRange.Cells[i, 2].Value2.ToString();
                 string lRoom = xlWorksheet.UsedRange.Cells[i, 3].Value2.ToString();
 
@@ -137,16 +177,20 @@ namespace WindowsFormsApp3
                 {
                     if (xlWorksheet.UsedRange.Cells[i, j] != null && xlWorksheet.UsedRange.Cells[i, j].Value2 != null)
                     {
-                        //SE101, OOP, Mr. Adeel <--Sample data
                         string data = xlWorksheet.UsedRange.Cells[i, j].Value2.ToString();
                         string[] items = data.Split(new char[] { ',' });
 
-                        string course = items[1].Trim();
-                        string teacher = items[2].Trim();
+                        if (items.Length == 3)
+                        {
+                            string course = items[1].Trim();
+                            string teacher = items[2].Trim();
 
-                        Slot s = new Slot(teacher, course, lBatch, lRoom);
+                            Slot s = new Slot(teacher, course, lBatch, lRoom);
 
-                        table.AddToSchedule(i-2, j-4, s);
+                            table.AddToSchedule(lDay, j - 4, s);
+                        }
+                        else
+                            MessageBox.Show("Invalid input: " + data);
                     }
                 }
             }
@@ -168,7 +212,7 @@ namespace WindowsFormsApp3
             {
                 string selectedfile = dialog.FileName;
                 ReadExcelFile(selectedfile);
-                DisplayTimetable(table.MasterSchedule);
+                DisplayMasterTimetable(table.MasterSchedule);
             }
         }
 

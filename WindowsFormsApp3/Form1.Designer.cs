@@ -32,14 +32,14 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byTeacherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byBatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matchTeacherBatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +81,30 @@
             this.menuStrip2.TabIndex = 6;
             this.menuStrip2.Text = "menuStrip2";
             // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openScheduleToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // openScheduleToolStripMenuItem
+            // 
+            this.openScheduleToolStripMenuItem.Name = "openScheduleToolStripMenuItem";
+            this.openScheduleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openScheduleToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.openScheduleToolStripMenuItem.Text = "Open Schedule...";
+            this.openScheduleToolStripMenuItem.Click += new System.EventHandler(this.openScheduleToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -118,29 +142,6 @@
             this.matchTeacherBatchToolStripMenuItem.Size = new System.Drawing.Size(133, 20);
             this.matchTeacherBatchToolStripMenuItem.Text = "Match Teacher & Batch";
             this.matchTeacherBatchToolStripMenuItem.Click += new System.EventHandler(this.matchTeacherBatchToolStripMenuItem_Click);
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openScheduleToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // openScheduleToolStripMenuItem
-            // 
-            this.openScheduleToolStripMenuItem.Name = "openScheduleToolStripMenuItem";
-            this.openScheduleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openScheduleToolStripMenuItem.Text = "Open Schedule...";
-            this.openScheduleToolStripMenuItem.Click += new System.EventHandler(this.openScheduleToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // Form1
             // 
